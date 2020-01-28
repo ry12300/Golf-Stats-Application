@@ -33,6 +33,7 @@ public class ScoreController {
     @ResponseStatus(HttpStatus.OK)
     public String get(@PathVariable String identity) {
 
+        //return score
         return "User: " + identity + " | Score: " + 89;
     }
 
