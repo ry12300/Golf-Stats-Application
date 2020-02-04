@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/scores")
 public class ScoreController {
 
-    private static final String SCORE = "score";
+    private static final String SCORE = "score" ;
 
     @Autowired
     public ScoreController() {
