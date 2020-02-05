@@ -51,7 +51,7 @@ public class RoundService {
         if (round.isPresent()) {
             roundRepository.delete(round.get());
         } else {
-            log.info("Could not find Round with objectId to delete: {}", objectId);
+            log.info("Could not find Round with objectId: {} to delete ", objectId);
         }
     }
 
