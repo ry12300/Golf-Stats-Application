@@ -17,7 +17,6 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.validation.Valid;
-import javax.validation.constraints.NotNull;
 import java.util.List;
 
 @RestController
@@ -53,7 +52,7 @@ public class RoundController {
         produces = MediaType.APPLICATION_JSON_VALUE
     )
     @ResponseStatus(HttpStatus.CREATED)
-    public Round create(@Valid @NotNull @RequestBody Round round) {
+    public Round create(@Valid @RequestBody Round round) {
 
         roundService.create(round);
 

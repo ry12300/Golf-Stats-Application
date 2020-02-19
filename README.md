@@ -17,4 +17,30 @@ docker run -p 8080:8080 golfstats - To run docker container (from root dir)
 
 # Testing
 
-http://localhost:8080/scores/identity123 - in Browser or Postman etc
+Get all Rounds
+
+GET http://localhost:8080/rounds
+
+Create a Round
+
+POST http://localhost:8080/rounds 
+
+{
+    "userId": "user5",
+    "course": "pinehurst",
+    "date": "20-01-2020",
+    "score": 95,
+    "fairwayPercentage": 19,
+    "greenPercentage": 22,
+    "numberOfPutts": 38,
+    "notes": null
+}
+
+Get Specific Round
+
+GET http://localhost:8080/rounds/User2
+
+Delete a Round
+
+DELETE http://localhost:8080/rounds/5e39e7814a37fe3a8c31ff63
+

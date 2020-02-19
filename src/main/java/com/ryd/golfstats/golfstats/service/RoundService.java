@@ -18,8 +18,6 @@ import java.util.Optional;
 @Service("RoundService")
 public class RoundService {
 
-    //todo - add abstract class for service?
-
     RoundRepository roundRepository;
 
     @Autowired
@@ -54,5 +52,9 @@ public class RoundService {
             log.info("Could not find Round with objectId: {} to delete ", objectId);
         }
     }
+
+    //todo - add patch
+
+
 
 }
