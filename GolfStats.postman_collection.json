@@ -1,0 +1,106 @@
+{
+	"info": {
+		"_postman_id": "721364bf-43d1-49ea-9460-f207d78977de",
+		"name": "GolfStats",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get all Rounds",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/rounds",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"rounds"
+					]
+				},
+				"description": "gets all rounds currently in the MongoDb"
+			},
+			"response": []
+		},
+		{
+			"name": "Create a Round",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"userId\": \"User2\",\r\n  \"course\": \"Spyglass\",\r\n  \"score\": 90,\r\n  \"fairwayPercentage\": 55,\r\n  \"greenPercentage\": 45,\r\n  \"numberOfPutts\": 38,\r\n  \"notes\": \"bad pace control on putts\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/rounds",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"rounds"
+					]
+				},
+				"description": "Create a round by passing a JSON body"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Rounds by userId",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/rounds/User2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"rounds",
+						"User2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete a Round",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/rounds/5e39e7814a37fe3a8c31ff63",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"rounds",
+						"5e39e7814a37fe3a8c31ff63"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

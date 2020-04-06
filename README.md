@@ -1,21 +1,22 @@
-# Golfstats application
+# Golfstats Application
 
 Application that shows a user the most important stats related to their golf game.
 
-# Building and running
-To build and run the application:
+# Building and Run using Docker
 
-gradle clean bootRun -To run a build and test
+Please follow the below instructions to run the GolfStats Application using docker-compose:
 
-gradle clean build - To create a self-contained executable jar
-
-# Docker
-
-docker build -t golfstats . - To build docker image (run from root dir)
-
-docker run -p 8080:8080 golfstats - To run docker container (from root dir)
+1. Clone the application: https://github.com/ry12300/golfStats.git
+2. Navigate to the root directory containing build.gradle
+3. run: "gradle clean build" and check that \build\libs\golfstats-0.0.1-SNAPSHOT.jar is present
+4. run: "docker build -t golfstats ."
+5. run: "docker-compose up -d"
 
 # Testing
+
+Below are sample REST requests for the application.
+
+The Postman collection can be imported using file: Golfstats.postman_collection.json
 
 Get all Rounds
 
