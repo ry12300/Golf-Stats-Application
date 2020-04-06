@@ -2,12 +2,14 @@ version: "3"
 services:
   golfstats:
     image: golfstats
+    container_name: golfstats
     ports:
       - 8080:8080
     depends_on: 
       - db
   db:
     image: mongo
+    container_name: mongo
     volumes:
       - ./database:/data
     ports:
