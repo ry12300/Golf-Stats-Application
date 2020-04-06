@@ -1,0 +1,14 @@
+version: "3"
+services:
+  golfstats:
+    image: golfstats
+    ports:
+      - 8080:8080
+    depends_on: 
+      - db
+  db:
+    image: mongo
+    volumes:
+      - ./database:/data
+    ports:
+      - "27017:27017"
