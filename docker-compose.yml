@@ -19,6 +19,7 @@
 #
 # Documentation:
 #    https://docs.docker.com/compose/compose-file/
+
 version: "3"
 
 services:
@@ -44,3 +45,7 @@ services:
       - ./database:/data
     ports:
       - "27017:27017"
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: admin
+      MONGO_INITDB_ROOT_PASSWORD: admin
+      MONGO_INITDB_DATABASE: golfStats
