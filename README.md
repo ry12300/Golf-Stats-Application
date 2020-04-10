@@ -2,13 +2,19 @@
 
 Application that shows a user the most important stats related to their golf game.
 
+# Pre-requisites 
+
+As a pre-requisite to running the Golfstats application please ensure the following:
+
+1. Docker is installed on your local machine : https://docs.docker.com/get-docker/
+2. MongoDB Compass is installed (optional) : https://www.mongodb.com/download-center/compass?tck=docs_compass
+
 # Building and Run using Docker
 
 Please follow the below instructions to run the GolfStats Application using docker-compose:
 
 1. Clone the application: https://github.com/ry12300/golfStats.git
-2. Navigate to the root directory containing build.gradle
-3. run: "gradle clean build" and check that \build\libs\golfstats-0.0.1-SNAPSHOT.jar is present
+2. Navigate to the root directory container dockerfile and docker-compose.yml
 4. run: "docker build -t golfstats ."
 5. run: "docker-compose up -d"
 
