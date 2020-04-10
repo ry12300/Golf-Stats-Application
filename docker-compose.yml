@@ -42,10 +42,14 @@ services:
     image: mongo
     container_name: mongo
     volumes:
-      - ./database:/data
+      - mongodata:/data/db
     ports:
-      - "27017:27017"
+      - "27018:27017"
     environment:
       MONGO_INITDB_ROOT_USERNAME: admin
       MONGO_INITDB_ROOT_PASSWORD: admin
-      MONGO_INITDB_DATABASE: golfstats
+      MONGO_INITDB_DATABASE: golfStats
+
+volumes:
+  mongodata:
+
