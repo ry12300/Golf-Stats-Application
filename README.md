@@ -13,10 +13,10 @@ As a pre-requisite to running the Golfstats application please ensure the follow
 
 Please follow the below instructions to run the GolfStats Application using docker-compose:
 
-1. Clone the application: https://github.com/ry12300/golfStats.git
+1. Clone the application: `git clone https://github.com/ry12300/golfStats.git`
 2. Navigate to the root directory container dockerfile and docker-compose.yml
-4. run: "docker build -t golfstats ."
-5. run: "docker-compose up -d"
+4. run: `docker build -t golfstats .`
+5. run: `docker-compose up -d`
 
 # Testing
 
