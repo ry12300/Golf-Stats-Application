@@ -22,7 +22,7 @@ Please follow the below instructions to run the GolfStats Application using dock
 
 Below are sample REST requests for the application.
 
-The Postman collection can be imported using file: Golfstats.postman_collection.json
+The Postman collection can be imported using file: `Golfstats.postman_collection.json`
 
 **Get all Rounds**
 
