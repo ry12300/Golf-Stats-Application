@@ -22,8 +22,6 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter'
 	implementation 'org.springframework.boot:spring-boot-starter-data-mongodb'
 	compile group: 'org.springframework.boot', name: 'spring-boot-starter-web', version: '2.2.2.RELEASE'
-	compile group: 'org.springframework.security', name: 'spring-security-core', version: '5.2.2.RELEASE'
-	compile group: 'org.springframework.cloud', name: 'spring-cloud-starter-oauth2', version: '2.2.0.RELEASE'
 
 	compileOnly 'org.projectlombok:lombok'
 	annotationProcessor 'org.projectlombok:lombok'

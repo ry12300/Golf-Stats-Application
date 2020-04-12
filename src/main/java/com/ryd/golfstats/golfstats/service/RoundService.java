@@ -1,6 +1,5 @@
 package com.ryd.golfstats.golfstats.service;
 
-
 import com.ryd.golfstats.golfstats.model.Round;
 import com.ryd.golfstats.golfstats.repository.RoundRepository;
 import lombok.extern.slf4j.Slf4j;
