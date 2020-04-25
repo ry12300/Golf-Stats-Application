@@ -2,12 +2,17 @@ package com.ryd.golfstats.golfstats.util;
 
 import com.github.javafaker.Faker;
 import com.ryd.golfstats.golfstats.model.Round;
+import org.bson.types.ObjectId;
 
 import java.time.LocalDate;
 
 public class Mocks {
 
     private Mocks(){ }
+
+    public static ObjectId objectId(){
+        return new ObjectId();
+    }
 
     public static Round pinehurstRound() {
 

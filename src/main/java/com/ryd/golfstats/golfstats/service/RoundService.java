@@ -17,6 +17,7 @@ import java.util.Optional;
 @Service("RoundService")
 public class RoundService {
 
+    @Autowired
     RoundRepository roundRepository;
 
     @Autowired

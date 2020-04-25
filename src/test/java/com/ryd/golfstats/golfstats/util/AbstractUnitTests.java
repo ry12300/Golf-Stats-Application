@@ -1,6 +1,7 @@
 package com.ryd.golfstats.golfstats.util;
 
 import com.ryd.golfstats.golfstats.GolfStatsApplication;
+import com.ryd.golfstats.golfstats.repository.RoundRepository;
 import com.ryd.golfstats.golfstats.service.RoundService;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -22,8 +23,16 @@ public abstract class AbstractUnitTests {
 
     /*
      * The behaviour of the mocks below should be
-     * defined in concrete classes. E.g. given/wens
+     * defined in concrete classes. E.g. given/whens
      */
+
     @MockBean
     public RoundService roundService;
+
+    @MockBean
+    public RoundRepository roundRepository;
+
+
+
+
 }

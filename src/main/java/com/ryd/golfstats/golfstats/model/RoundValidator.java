@@ -14,6 +14,5 @@ public class RoundValidator implements Validator {
     public void validate(Object objectToValidate, Errors errors) {
 
         //todo - implement buisness logic
-
     }
 }

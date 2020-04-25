@@ -55,6 +55,7 @@ public class RoundsControllerTest extends AbstractUnitTests {
         assertEquals(response.getStatus(), HttpStatus.OK.value());
     }
 
+    //todo - fix gson serializing issue
 //    @Test
 //    public void shouldCreateRound() throws Exception {
 //
@@ -71,6 +72,6 @@ public class RoundsControllerTest extends AbstractUnitTests {
 //
 //        // asserts
 //        assertNotNull(response);
-//        assertEquals(response.getStatus(), HttpStatus.CREATED);
+//        assertEquals(response.getStatus(), HttpStatus.CREATED.value());
 //    }
 }
