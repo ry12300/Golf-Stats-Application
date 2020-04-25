@@ -25,8 +25,11 @@ public class RoundService {
 
     }
 
-    public List<Round> find() {
+    public List<Round> getRoundsByUserId(String userId) {
+        return roundRepository.findByUserId(userId);
+    }
 
+    public List<Round> find() {
         return roundRepository.findAll();
     }
 
@@ -36,13 +39,7 @@ public class RoundService {
         return round;
     }
 
-    public List<Round> getRoundsByUserId(String userId) {
-
-        return roundRepository.findByUserId(userId);
-    }
-
     public void delete(ObjectId objectId) {
-
         Optional<Round> round = roundRepository.findBy_id(objectId);
 
         if (round.isPresent()) {
@@ -53,7 +50,5 @@ public class RoundService {
     }
 
     //todo - add patch
-
-
 
 }
