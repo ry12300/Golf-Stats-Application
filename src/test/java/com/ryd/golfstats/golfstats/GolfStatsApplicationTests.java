@@ -1,13 +1,11 @@
 package com.ryd.golfstats.golfstats;
 
 import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.context.SpringBootTest;
 
-@SpringBootTest
-class GolfStatsApplicationTests {
+class GolfStatsApplicationTests extends AbstractUnitTests {
 
-	@Test
-	void contextLoads() {
-	}
+    @Test
+    void contextLoads() {
+    }
 
 }

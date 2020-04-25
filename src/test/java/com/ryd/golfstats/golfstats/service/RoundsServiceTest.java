@@ -1,12 +1,12 @@
-package com.ryd.golfstats.golfstats;
+package com.ryd.golfstats.golfstats.service;
 
+import com.ryd.golfstats.golfstats.AbstractUnitTests;
 import com.ryd.golfstats.golfstats.model.Round;
-import com.ryd.golfstats.golfstats.service.RoundService;
-import com.ryd.golfstats.golfstats.util.AbstractUnitTests;
 import com.ryd.golfstats.golfstats.util.Mocks;
 import org.bson.types.ObjectId;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 
 import java.util.Collections;
@@ -25,7 +25,7 @@ public class RoundsServiceTest extends AbstractUnitTests {
 
     private static String STUB_USER_ID = "user3";
 
-    // class under test - note injectMocks not autowired
+    // class under test
     @InjectMocks
     RoundService roundService;
 
@@ -33,15 +33,17 @@ public class RoundsServiceTest extends AbstractUnitTests {
 
     private ObjectId objectId;
 
-    @Before
+    @BeforeEach //note this replaces the junit 4 @Before
     public void setUp() {
+
         initMocks(this);
         round = Mocks.pinehurstRound();
         objectId = Mocks.objectId();
     }
 
+    @DisplayName("Test RoundService.getAllRoundsByUserId()")
     @Test
-    public void shouldGetRoundsByUserId(){
+    public void shouldGetRoundsByUserId() {
 
         // setup
         given(roundRepository.findByUserId(anyString())).willReturn(Collections.singletonList(round));
@@ -52,11 +54,12 @@ public class RoundsServiceTest extends AbstractUnitTests {
         // asserts
         assertNotNull(rounds);
         assertEquals(1, rounds.size());
-        assertEquals("user3",rounds.get(0).userId());
+        assertEquals("user3", rounds.get(0).userId());
     }
 
+    @DisplayName("Test RoundService.find()")
     @Test
-    public void shouldFindAllRounds(){
+    public void shouldFindAllRounds() {
 
         // setup
         given(roundRepository.findAll()).willReturn(Collections.singletonList(round));
@@ -67,11 +70,12 @@ public class RoundsServiceTest extends AbstractUnitTests {
         // asserts
         assertNotNull(rounds);
         assertEquals(1, rounds.size());
-        assertEquals("user3",rounds.get(0).userId());
+        assertEquals("user3", rounds.get(0).userId());
     }
 
+    @DisplayName("Test RoundService.create()")
     @Test
-    public void shouldCreateRound(){
+    public void shouldCreateRound() {
 
         // setup
         given(roundRepository.save(round)).willReturn(round);
@@ -81,11 +85,12 @@ public class RoundsServiceTest extends AbstractUnitTests {
 
         // asserts
         assertNotNull(createdRound);
-        assertEquals("user3",createdRound.userId());
+        assertEquals("user3", createdRound.userId());
     }
 
+    @DisplayName("Test RoundService.delete()")
     @Test
-    public void ShouldDeleteRound(){
+    public void ShouldDeleteRound() {
 
         // setup
         given(roundRepository.findBy_id(objectId)).willReturn(Optional.of(round));
