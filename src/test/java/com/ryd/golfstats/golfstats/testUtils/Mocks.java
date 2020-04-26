@@ -1,4 +1,4 @@
-package com.ryd.golfstats.golfstats.util;
+package com.ryd.golfstats.golfstats.testUtils;
 
 import com.github.javafaker.Faker;
 import com.ryd.golfstats.golfstats.model.Round;

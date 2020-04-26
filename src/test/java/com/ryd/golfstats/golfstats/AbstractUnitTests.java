@@ -11,8 +11,8 @@ import org.springframework.test.context.junit.jupiter.SpringExtension;
  * This class should be extended by all Unit Test classes
  * to avoid repeating mock object creation in many classes
  */
-@ExtendWith(SpringExtension.class) //junit jupiter version of junit4 @RunWith
-//@ExtendWith(MockitoExtension.class) //mockito and jupiter compatability
+@ExtendWith(SpringExtension.class)
+//@ExtendWith(MockitoExtension.class)
 @SpringBootTest(
     classes = GolfStatsApplication.class,
     webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT

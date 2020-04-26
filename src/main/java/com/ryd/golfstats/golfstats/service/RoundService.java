@@ -2,6 +2,7 @@ package com.ryd.golfstats.golfstats.service;
 
 import com.ryd.golfstats.golfstats.model.Round;
 import com.ryd.golfstats.golfstats.repository.RoundRepository;
+import com.ryd.golfstats.golfstats.utils.Assert;
 import lombok.extern.slf4j.Slf4j;
 import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,6 +23,9 @@ public class RoundService {
 
     @Autowired
     public RoundService(RoundRepository roundRepository) {
+
+        Assert.notNull(roundRepository, "roundRepository");
+
         this.roundRepository = roundRepository;
 
     }
@@ -35,6 +39,7 @@ public class RoundService {
     }
 
     public Round create(@Valid @NotNull @RequestBody Round round) {
+
         roundRepository.save(round);
 
         return round;

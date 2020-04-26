@@ -2,8 +2,8 @@ package com.ryd.golfstats.golfstats.controller;
 
 import com.ryd.golfstats.golfstats.AbstractUnitTests;
 import com.ryd.golfstats.golfstats.model.Round;
-import com.ryd.golfstats.golfstats.util.Mocks;
-import com.ryd.golfstats.golfstats.util.Requests;
+import com.ryd.golfstats.golfstats.testUtils.Mocks;
+import com.ryd.golfstats.golfstats.testUtils.Requests;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,8 +15,8 @@ import org.springframework.test.web.servlet.RequestBuilder;
 
 import java.util.Collections;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.mockito.BDDMockito.given;
 import static org.mockito.MockitoAnnotations.initMocks;
 

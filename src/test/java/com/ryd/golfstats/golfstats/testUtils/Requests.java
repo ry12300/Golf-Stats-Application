@@ -1,4 +1,4 @@
-package com.ryd.golfstats.golfstats.util;
+package com.ryd.golfstats.golfstats.testUtils;
 
 import com.ryd.golfstats.golfstats.model.Round;
 import org.springframework.http.MediaType;
