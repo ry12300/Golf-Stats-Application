@@ -10,20 +10,40 @@ public class Requests {
     private Requests() {
     }
 
-    public static RequestBuilder getRoundsByUserId(String userId) {
+    public static RequestBuilder getAllRoundsByUserId(String userId) {
 
         return MockMvcRequestBuilders
-            .get("/rounds/" + userId)
+            .get("/users/" + userId + "/rounds/")
             .accept(MediaType.APPLICATION_JSON)
             .contentType(MediaType.APPLICATION_JSON);
     }
 
-    public static RequestBuilder createRound(Round round) {
+    public static RequestBuilder getSpecificRound(String userId, String roundId) {
 
         return MockMvcRequestBuilders
-            .post("/rounds")
+            .get("/users/" + userId + "/rounds/" + roundId)
+            .accept(MediaType.APPLICATION_JSON)
+            .contentType(MediaType.APPLICATION_JSON);
+    }
+
+
+    public static RequestBuilder createRound(String userId, Round round) {
+
+        return MockMvcRequestBuilders
+            .post("/users/" + userId + "/rounds/")
             .accept(MediaType.APPLICATION_JSON)
             .content(TestHelper.toJson(round))
             .contentType(MediaType.APPLICATION_JSON);
     }
+
+    public static RequestBuilder deleteRound(String userId, String roundId, Round round) {
+
+        return MockMvcRequestBuilders
+            .delete("/users/" + userId + "/rounds/" + roundId)
+            .accept(MediaType.APPLICATION_JSON)
+            .content(TestHelper.toJson(round))
+            .contentType(MediaType.APPLICATION_JSON);
+    }
+
+    // todo - add for patch and delete
 }

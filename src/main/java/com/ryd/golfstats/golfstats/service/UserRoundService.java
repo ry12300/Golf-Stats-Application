@@ -16,38 +16,38 @@ import java.util.Optional;
 
 @Slf4j
 @Service("RoundService")
-public class RoundService {
+public class UserRoundService {
 
     @Autowired
     RoundRepository roundRepository;
 
     @Autowired
-    public RoundService(RoundRepository roundRepository) {
-
+    public UserRoundService(RoundRepository roundRepository) {
         Assert.notNull(roundRepository, "roundRepository");
-
         this.roundRepository = roundRepository;
-
     }
 
-    public List<Round> getRoundsByUserId(String userId) {
+    public Optional<Round> getRoundByUserIdAndId(String userId, ObjectId objectId) {
+        return roundRepository.findByUserIdAnd_id(userId, objectId);
+    }
+
+    public List<Round> getAllRoundsByUserId(String userId) {
         return roundRepository.findByUserId(userId);
     }
 
-    public List<Round> find() {
-        return roundRepository.findAll();
-    }
+    public Round create(String userId, @Valid @NotNull @RequestBody Round round) {
 
-    public Round create(@Valid @NotNull @RequestBody Round round) {
+        // set userId from path
+        round.userId(userId);
 
         roundRepository.save(round);
-
         return round;
     }
 
-    public void delete(ObjectId objectId) {
-        Optional<Round> round = roundRepository.findBy_id(objectId);
+    public void delete(String userId, ObjectId objectId) {
+        Optional<Round> round = roundRepository.findByUserIdAnd_id(userId, objectId);
 
+        //todo - need to return proper REST codes - e.g. if not found return 400
         if (round.isPresent()) {
             roundRepository.delete(round.get());
         } else {
@@ -56,5 +56,16 @@ public class RoundService {
     }
 
     //todo - add patch
+    public void patch(String userId, ObjectId objectId, Round updatedRound) {
+
+        Optional<Round> round = roundRepository.findByUserIdAnd_id(userId, objectId);
+
+        //todo - use exisiting Id or override?
+
+
+        //todo -use mongo updatefirst below?
+
+        roundRepository.findByUserIdAnd_id(userId, objectId);
+    }
 
 }

@@ -24,9 +24,10 @@ import static org.mockito.MockitoAnnotations.initMocks;
 public class RoundsServiceTest extends AbstractUnitTests {
 
     private static String STUB_USER_ID = "user3";
+    private static String STUB_ROUND_ID = "7e3b270222252b2dadd547fb";
 
     // class under test
-    RoundService roundService;
+    UserRoundService userRoundService;
 
     private Round round;
 
@@ -39,7 +40,7 @@ public class RoundsServiceTest extends AbstractUnitTests {
         round = Mocks.pinehurstRound();
         objectId = Mocks.objectId();
 
-        roundService = new RoundService((roundRepository));
+        userRoundService = new UserRoundService((roundRepository));
     }
 
     @DisplayName("Test RoundService.getAllRoundsByUserId()")
@@ -50,7 +51,7 @@ public class RoundsServiceTest extends AbstractUnitTests {
         given(roundRepository.findByUserId(anyString())).willReturn(Collections.singletonList(round));
 
         // call method under test
-        List<Round> rounds = roundService.getRoundsByUserId(STUB_USER_ID);
+        List<Round> rounds = userRoundService.getAllRoundsByUserId(STUB_USER_ID);
 
         // asserts
         assertNotNull(rounds);
@@ -58,21 +59,6 @@ public class RoundsServiceTest extends AbstractUnitTests {
         assertEquals("user3", rounds.get(0).userId());
     }
 
-    @DisplayName("Test RoundService.find()")
-    @Test
-    public void shouldFindAllRounds() {
-
-        // setup
-        given(roundRepository.findAll()).willReturn(Collections.singletonList(round));
-
-        // call method under test
-        List<Round> rounds = roundService.find();
-
-        // asserts
-        assertNotNull(rounds);
-        assertEquals(1, rounds.size());
-        assertEquals("user3", rounds.get(0).userId());
-    }
 
     @DisplayName("Test RoundService.create()")
     @Test
@@ -82,7 +68,7 @@ public class RoundsServiceTest extends AbstractUnitTests {
         given(roundRepository.save(round)).willReturn(round);
 
         // call method under test
-        Round createdRound = roundService.create(round);
+        Round createdRound = userRoundService.create(STUB_USER_ID, round);
 
         // asserts
         assertNotNull(createdRound);
@@ -94,10 +80,10 @@ public class RoundsServiceTest extends AbstractUnitTests {
     public void ShouldDeleteRound() {
 
         // setup
-        given(roundRepository.findBy_id(objectId)).willReturn(Optional.of(round));
+        given(roundRepository.findByUserIdAnd_id(STUB_USER_ID, objectId)).willReturn(Optional.of(round));
 
         // call method under test
-        roundService.delete(objectId);
+        userRoundService.delete(STUB_USER_ID, objectId);
 
         // asserts
         verify(roundRepository, times(1)).delete(round);

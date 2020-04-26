@@ -1,7 +1,7 @@
 package com.ryd.golfstats.golfstats;
 
 import com.ryd.golfstats.golfstats.repository.RoundRepository;
-import com.ryd.golfstats.golfstats.service.RoundService;
+import com.ryd.golfstats.golfstats.service.UserRoundService;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
@@ -26,7 +26,7 @@ public abstract class AbstractUnitTests {
      * defined in concrete classes. E.g. given/whens
      */
     @MockBean
-    public RoundService roundService;
+    public UserRoundService userRoundService;
 
     @MockBean
     public RoundRepository roundRepository;
