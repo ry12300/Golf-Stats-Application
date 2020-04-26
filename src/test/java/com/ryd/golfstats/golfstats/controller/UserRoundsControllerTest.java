@@ -99,23 +99,20 @@ public class UserRoundsControllerTest extends AbstractUnitTests {
         assertEquals(response.getStatus(), HttpStatus.CREATED.value());
     }
 
-    // todo - need a return value to mock this?
-//    @Test
-//    public void shouldDeleteRound() throws Exception {
-//
-//        // setup
-//        given(userRoundService.create(anyString(), round)).willReturn(round);
-//
-//        // mock the rounds/userId request
-//        RequestBuilder requestBuilder = Requests.createRound(STUB_USER_ID,round);
-//
-//        // perform the requests
-//        MockHttpServletResponse response = mockMvc.perform(requestBuilder)
-//            .andReturn()
-//            .getResponse();
-//
-//        // asserts
-//        assertNotNull(response);
-//        assertEquals(response.getStatus(), HttpStatus.CREATED.value());
-//    }
+    //todo - is this testing anything?
+    @Test
+    public void shouldDeleteRound() throws Exception {
+
+        // mock the rounds/userId request
+        RequestBuilder requestBuilder = Requests.deleteRound(STUB_USER_ID, STUB_ROUND_ID, round);
+
+        // perform the requests
+        MockHttpServletResponse response = mockMvc.perform(requestBuilder)
+            .andReturn()
+            .getResponse();
+
+        // asserts
+        assertNotNull(response);
+        assertEquals(response.getStatus(), HttpStatus.OK.value());
+    }
 }

@@ -55,17 +55,12 @@ public class UserRoundService {
         }
     }
 
-    //todo - add patch
-    public void patch(String userId, ObjectId objectId, Round updatedRound) {
-
-        Optional<Round> round = roundRepository.findByUserIdAnd_id(userId, objectId);
-
-        //todo - use exisiting Id or override?
-
-
-        //todo -use mongo updatefirst below?
-
-        roundRepository.findByUserIdAnd_id(userId, objectId);
-    }
+//    public void put(String userId, ObjectId objectId, Round updatedRound) {
+//
+//        // get original round
+//        Optional<Round> round = roundRepository.findByUserIdAnd_id(userId, objectId);
+//
+//        //todo - how to implement PUT in mongo to update to "updatedRound"?
+//    }
 
 }
