@@ -58,7 +58,7 @@ public class UserRoundsControllerTest extends AbstractUnitTests {
 
         // asserts
         assertNotNull(response);
-        assertEquals(response.getStatus(), HttpStatus.OK.value());
+        assertEquals(HttpStatus.OK.value(), response.getStatus());
     }
 
     @Test
@@ -77,7 +77,7 @@ public class UserRoundsControllerTest extends AbstractUnitTests {
 
         // asserts
         assertNotNull(response);
-        assertEquals(response.getStatus(), HttpStatus.OK.value());
+        assertEquals(HttpStatus.OK.value(), response.getStatus());
     }
 
     @Test
@@ -113,6 +113,6 @@ public class UserRoundsControllerTest extends AbstractUnitTests {
 
         // asserts
         assertNotNull(response);
-        assertEquals(response.getStatus(), HttpStatus.OK.value());
+        assertEquals(HttpStatus.OK.value(), response.getStatus());
     }
 }
