@@ -19,16 +19,14 @@ import org.springframework.test.context.junit.jupiter.SpringExtension;
 )
 public abstract class AbstractUnitTests {
 
-    //todo - change below from being public?
-
     /*
      * The behaviour of the mocks below should be
      * defined in concrete classes. E.g. given/whens
      */
     @MockBean
-    public UserRoundService userRoundService;
+    protected UserRoundService userRoundService;
 
     @MockBean
-    public RoundRepository roundRepository;
+    protected RoundRepository roundRepository;
 
 }

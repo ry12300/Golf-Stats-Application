@@ -20,8 +20,8 @@ import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 import static org.mockito.MockitoAnnotations.initMocks;
 
-@DisplayName("Test RoundService")
-public class RoundsServiceTest extends AbstractUnitTests {
+@DisplayName("Test UserRoundsServiceTest")
+public class UserRoundsServiceTest extends AbstractUnitTests {
 
     private static String STUB_USER_ID = "user3";
     private static String STUB_ROUND_ID = "7e3b270222252b2dadd547fb";
