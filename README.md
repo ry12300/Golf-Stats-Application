@@ -1,6 +1,6 @@
 # Golfstats Application
 
-Application that shows a user the most important stats related to their golf game.
+Spring Boot CRUD web app that shoes user important stats related to their golf game.
 
 # Pre-requisites 
 
